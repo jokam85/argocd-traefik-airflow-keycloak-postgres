@@ -5,23 +5,24 @@ metadata:
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
-project: default
-source:
-  repoURL: 'https://github.com/traefik/traefik-helm-chart.git'
-  path: traefik
-  targetRevision: HEAD
-  helm:
-    parameters:
-      - name: service.type
-        value: ClusterIP
-      - name: 'globalArguments[0]'
-        value: '--api.insecure=true'
-destination:
-  server: 'https://kubernetes.default.svc'
-  namespace: ingress
-syncPolicy:
-  automated:
-    prune: true
-    selfHeal: true
-  syncOptions:
-    - CreateNamespace=true
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/traefik/traefik-helm-chart.git'
+    path: traefik
+    targetRevision: HEAD
+    helm:
+      parameters:
+        - name: service.type
+          value: ClusterIP
+        - name: 'globalArguments[0]'
+          value: '--api.insecure=true'
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: ingress
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
