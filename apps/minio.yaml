@@ -20,7 +20,7 @@ spec:
           value: 'admin'
         - name: 'ingress.enabled'
           value: 'true'
-        - name: 'ingress.hostname	'
+        - name: 'ingress.hostname'
           value: 'localhost'
         - name: 'ingress.path'
           value: '/minio'
