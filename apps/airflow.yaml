@@ -15,7 +15,7 @@ spec:
       releaseName: 'airflow'
       parameters:
         - name: 'executor'
-          value: 'CeleryExecutor'
+          value: 'KubernetesExecutor'
         - name: 'redis.enabled'
           value: 'true'
         - name: 'rbac.create'
@@ -46,7 +46,7 @@ spec:
         - name: 'externalDatabase.port'
           value: '5432'
         - name: 'externalDatabase.database'
-          value: 'a7'
+          value: 'a8'
           
         - name: 'auth.username'
           value: 'user'
