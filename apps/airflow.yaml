@@ -17,7 +17,7 @@ spec:
         - name: 'executor'
           value: 'CeleryExecutor'
         - name: 'redis.enabled'
-          value: 'true'
+          value: 'false'
         - name: 'rbac.create'
           value: 'true'
         - name: 'serviceaccount.create'
@@ -46,20 +46,20 @@ spec:
         - name: 'externalDatabase.port'
           value: '5432'
         - name: 'externalDatabase.database'
-          value: 'a12'
+          value: 'a13'
           
         - name: 'auth.username'
           value: 'user'
         - name: 'auth.password'
           value: 'user'
           
-        - name: 'scheduler.replicaCount'
-          value: '1'
-        - name: 'worker.replicaCount'
-          value: '3'
+#         - name: 'scheduler.replicaCount'
+#           value: '1'
+#         - name: 'worker.replicaCount'
+#           value: '3'
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: airflow3
+    namespace: airflow4
   syncPolicy:
     automated:
       prune: true
