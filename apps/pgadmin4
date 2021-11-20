@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: pgadmin4
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/rowanruseler/helm-charts.git'
+    path: 'charts/pgadmin4'
+    targetRevision: HEAD
+    helm:
+      releaseName: 'pgadmin4'
+      parameters:
+        - name: 'ingress.enabled'
+          value: 'true'
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: pgadmin4
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
