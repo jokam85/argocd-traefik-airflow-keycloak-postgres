@@ -16,9 +16,9 @@ spec:
       parameters:
         - name: 'ingress.enabled'
           value: 'true'
-        - name: 'ingress.hosts.host'
+        - name: 'ingress.hosts[0].host'
           value: 'localhost'
-        - name: 'ingress.hosts.paths[0]'
+        - name: 'ingress.hosts[0].paths[0]'
           value: 'pgadmin4'
   destination:
     server: 'https://kubernetes.default.svc'
