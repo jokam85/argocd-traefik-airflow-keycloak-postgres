@@ -52,6 +52,11 @@ spec:
           value: 'user'
         - name: 'auth.password'
           value: 'user'
+          
+        - name: 'scheduler.replicaCount'
+          value: '3'
+        - name: 'worker.replicaCount'
+          value: '3'
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: airflow
