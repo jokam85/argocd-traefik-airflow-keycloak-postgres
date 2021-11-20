@@ -34,7 +34,7 @@ spec:
         - name: 'apiIngress.hostname'
           value: 'localhost'
         - name: 'apiIngress.path'
-          value: '/minio'
+          value: '/minio-api'
 
   destination:
     server: 'https://kubernetes.default.svc'
