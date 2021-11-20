@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/bitnami/charts.git'
-    path: 'bitnami/keycloak'
+    path: 'charts/bitnami/keycloak'
     targetRevision: HEAD
     helm:
       releaseName: 'keycloak'
