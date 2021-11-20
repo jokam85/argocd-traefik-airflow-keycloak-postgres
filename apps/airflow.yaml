@@ -28,9 +28,9 @@ spec:
         - name: 'ingress.enabled'
           value: 'true'
         - name: 'ingress.hosts[0].name'
-          value: 'http://127.0.0.1/'
+          value: 'localhost'
         - name: 'ingress.hosts[0].path'
-          value: '/'
+          value: '/airflow'
           
         - name: 'postgresql.enabled'
           value: 'false'
