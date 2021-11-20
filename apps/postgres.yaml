@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: postgres
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/bitnami/charts.git'
+    path: 'bitnami/postgres'
+    targetRevision: HEAD
+    helm:
+      releaseName: 'postgres'
+      parameters:
+        - name: 'postgresqlPassword'
+          value: 'postgres'
+        - name: 'postgresqlUsername'
+          value: 'postgres'
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: postgres
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
