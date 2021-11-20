@@ -14,14 +14,14 @@ spec:
     helm:
       releaseName: 'airflow'
       parameters:
-        - name: 'executor'
-          value: 'KubernetesExecutor'
-        - name: 'redis.enabled'
-          value: 'false'
-        - name: 'rbac.create'
-          value: 'true'
-        - name: 'serviceaccount.create'
-          value: 'true'
+#         - name: 'executor'
+#           value: 'KubernetesExecutor'
+#         - name: 'redis.enabled'
+#           value: 'false'
+#         - name: 'rbac.create'
+#           value: 'true'
+#         - name: 'serviceaccount.create'
+#           value: 'true'
         - name: 'web.baseUrl'
           value: '/airflow'
           
