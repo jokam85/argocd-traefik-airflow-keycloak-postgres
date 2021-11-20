@@ -24,8 +24,12 @@ spec:
           
         - name: 'service.type'
           value: 'ClusterIP'
+        - name: 'ingress.enabled'
+          value: 'true'
         - name: 'ingress.path'
           value: '/auth'
+        - name: 'ingress.hostname'
+          value: 'localhost'
           
         - name: 'postgresql.enabled'
           value: 'false'
