@@ -22,19 +22,19 @@ spec:
         - name: 'auth.rootPassword'
           value: 'adminadmin'
           
-        - name: 'ingress.enabled'
-          value: 'true'
-        - name: 'ingress.hostname'
-          value: 'localhost'
-        - name: 'ingress.path'
-          value: '/'
+#         - name: 'ingress.enabled'
+#           value: 'true'
+#         - name: 'ingress.hostname'
+#           value: 'localhost'
+#         - name: 'ingress.path'
+#           value: '/'
          
         - name: 'apiIngress.enabled'
           value: 'true'
         - name: 'apiIngress.hostname'
           value: 'localhost'
         - name: 'apiIngress.path'
-          value: '/minio-api'
+          value: '/'
 
   destination:
     server: 'https://kubernetes.default.svc'
