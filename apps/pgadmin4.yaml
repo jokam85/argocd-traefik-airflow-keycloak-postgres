@@ -22,6 +22,8 @@ spec:
           value: '/pgadmin4'
         - name: 'ingress.hosts[0].paths[0].pathType'
           value: 'ImplementationSpecific'
+        - name: 'env.contextPath'
+          value: 'pgadmin4'
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: pgadmin4
