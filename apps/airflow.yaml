@@ -56,7 +56,7 @@ spec:
         - name: 'scheduler.replicaCount'
           value: '1'
         - name: 'worker.replicaCount'
-          value: '3'
+          value: '10'
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: airflow3
