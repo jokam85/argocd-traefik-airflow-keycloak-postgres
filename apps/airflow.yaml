@@ -15,7 +15,7 @@ spec:
       releaseName: 'airflow'
       parameters:
         - name: 'executor'
-          value: 'CeleryExecutor'
+          value: 'KubernetesExecutor'
         - name: 'redis.enabled'
           value: 'false'
         - name: 'rbac.create'
@@ -46,7 +46,7 @@ spec:
         - name: 'externalDatabase.port'
           value: '5432'
         - name: 'externalDatabase.database'
-          value: 'a13'
+          value: 'a14'
           
         - name: 'auth.username'
           value: 'user'
@@ -59,7 +59,7 @@ spec:
 #           value: '3'
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: airflow4
+    namespace: airflow5
   syncPolicy:
     automated:
       prune: true
