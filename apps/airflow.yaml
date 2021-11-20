@@ -24,10 +24,14 @@ spec:
           value: 'true'
         - name: 'web.baseUrl'
           value: '/airflow'
+          
         - name: 'ingress.enabled'
           value: 'true'
-
-
+        - name: 'ingress.hosts[0].name'
+          value: 'http://127.0.0.1/'
+        - name: 'ingress.hosts[0].path'
+          value: '/'
+          
         - name: 'postgresql.enabled'
           value: 'false'
         - name: 'externalDatabase.host'
