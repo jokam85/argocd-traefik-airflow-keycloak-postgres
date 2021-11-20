@@ -1,47 +1,47 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: minio
-  namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
-spec:
-  project: default
-  source:
-    repoURL: 'https://github.com/bitnami/charts.git'
-    path: 'bitnami/minio'
-    targetRevision: HEAD
-    helm:
-      releaseName: 'minio'
-      parameters:
-        - name: 'image.debug'
-          value: 'true'
-          
-        - name: 'auth.rootUser'
-          value: 'admin'
-        - name: 'auth.rootPassword'
-          value: 'adminadmin'
-          
-#         - name: 'ingress.enabled'
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: minio
+#   namespace: argocd
+#   finalizers:
+#     - resources-finalizer.argocd.argoproj.io
+# spec:
+#   project: default
+#   source:
+#     repoURL: 'https://github.com/bitnami/charts.git'
+#     path: 'bitnami/minio'
+#     targetRevision: HEAD
+#     helm:
+#       releaseName: 'minio'
+#       parameters:
+#         - name: 'image.debug'
 #           value: 'true'
-#         - name: 'ingress.hostname'
-#           value: 'localhost'
-#         - name: 'ingress.path'
-#           value: '/'
+          
+#         - name: 'auth.rootUser'
+#           value: 'admin'
+#         - name: 'auth.rootPassword'
+#           value: 'adminadmin'
+          
+# #         - name: 'ingress.enabled'
+# #           value: 'true'
+# #         - name: 'ingress.hostname'
+# #           value: 'localhost'
+# #         - name: 'ingress.path'
+# #           value: '/'
          
-        - name: 'apiIngress.enabled'
-          value: 'true'
-        - name: 'apiIngress.hostname'
-          value: 'localhost'
-        - name: 'apiIngress.path'
-          value: '/'
+#         - name: 'apiIngress.enabled'
+#           value: 'true'
+#         - name: 'apiIngress.hostname'
+#           value: 'localhost'
+#         - name: 'apiIngress.path'
+#           value: '/'
 
-  destination:
-    server: 'https://kubernetes.default.svc'
-    namespace: minio
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
+#   destination:
+#     server: 'https://kubernetes.default.svc'
+#     namespace: minio
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+#     syncOptions:
+#       - CreateNamespace=true
