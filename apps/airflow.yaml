@@ -24,6 +24,8 @@ spec:
           value: 'true'
         - name: 'web.baseUrl'
           value: '/airflow'
+        - name: 'ingress.enabled'
+          value: 'true'
 
 
         - name: 'postgresql.enabled'
