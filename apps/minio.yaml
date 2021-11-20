@@ -1,0 +1,40 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: minio
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/bitnami/charts.git'
+    path: 'bitnami/minio'
+    targetRevision: HEAD
+    helm:
+      releaseName: 'minio'
+      parameters:
+        - name: 'auth.rootUser'
+          value: 'admin'
+        - name: 'auth.rootPassword'
+          value: 'admin'
+        - name: 'ingress.enabled'
+          value: 'true'
+        - name: 'ingress.hostname	'
+          value: 'localhost'
+        - name: 'ingress.path'
+          value: '/minio'
+        - name: ''
+          value: ''
+        - name: ''
+          value: ''
+
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: minio
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
