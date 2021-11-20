@@ -17,7 +17,7 @@ spec:
         - name: 'executor'
           value: 'CeleryExecutor'
         - name: 'redis.enabled'
-          value: 'false'
+          value: 'true'
         - name: 'rbac.create'
           value: 'true'
         - name: 'serviceaccount.create'
