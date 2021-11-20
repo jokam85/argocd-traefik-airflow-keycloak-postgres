@@ -34,11 +34,11 @@ spec:
         - name: 'externalDatabase.port'
           value: '5432'         
         - name: 'externalDatabase.user'
-          value: 'keycloak'         
+          value: 'postgres'         
         - name: 'externalDatabase.password'
-          value: 'keycloak'         
+          value: 'postgres'         
         - name: 'externalDatabase.database'
-          value: 'keycloak'
+          value: 'postgres'
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: keycloak
