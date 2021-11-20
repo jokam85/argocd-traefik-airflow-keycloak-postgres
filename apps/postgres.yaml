@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/bitnami/charts.git'
-    path: 'bitnami/postgres'
+    path: 'bitnami/postgresql'
     targetRevision: HEAD
     helm:
       releaseName: 'postgres'
@@ -20,7 +20,7 @@ spec:
           value: 'postgres'
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: postgres
+    namespace: postgresql
   syncPolicy:
     automated:
       prune: true
