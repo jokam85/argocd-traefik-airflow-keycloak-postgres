@@ -17,7 +17,7 @@ spec:
         - name: 'auth.rootUser'
           value: 'admin'
         - name: 'auth.rootPassword'
-          value: 'admin'
+          value: 'adminadmin'
         - name: 'ingress.enabled'
           value: 'true'
         - name: 'ingress.hostname'
