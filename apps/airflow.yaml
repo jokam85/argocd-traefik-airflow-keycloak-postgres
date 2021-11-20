@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: airflow22
+  name: a24
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -15,7 +15,7 @@ spec:
       releaseName: 'airflow'
       parameters:
         - name: 'executor'
-          value: 'CeleryExecutor'
+          value: 'KubernetesExecutor'
         - name: 'redis.enabled'
           value: 'true'
         - name: 'rbac.create'
@@ -46,7 +46,7 @@ spec:
         - name: 'externalDatabase.port'
           value: '5432'
         - name: 'externalDatabase.database'
-          value: 'a22'
+          value: 'a24'
           
         - name: 'auth.username'
           value: 'user'
@@ -54,12 +54,12 @@ spec:
           value: 'user'
           
         - name: 'scheduler.replicaCount'
-          value: '1'
-        - name: 'worker.replicaCount'
-          value: '5'
+          value: '2'
+#         - name: 'worker.replicaCount'
+#           value: '5'
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: airflow21
+    namespace: a24
   syncPolicy:
     automated:
       prune: true
