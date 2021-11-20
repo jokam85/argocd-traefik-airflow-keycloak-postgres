@@ -18,10 +18,24 @@ spec:
           value: 'admin'
         - name: 'auth.adminPassword'
           value: 'admin'
+          
         - name: 'service.type'
           value: 'ClusterIP'
         - name: 'ingress.path'
           value: '/auth'
+          
+        - name: 'postgresql.enabled	'
+          value: 'false'
+        - name: 'externalDatabase.host'
+          value: 'postgres-postgresql.postgresql.svc.cluster.local'         
+        - name: 'externalDatabase.port'
+          value: '5432'         
+        - name: 'externalDatabase.user'
+          value: 'keycloak'         
+        - name: 'externalDatabase.password'
+          value: 'keycloak'         
+        - name: 'externalDatabase.database'
+          value: 'postgres'
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: keycloak
