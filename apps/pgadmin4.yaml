@@ -20,6 +20,8 @@ spec:
           value: 'localhost'
         - name: 'ingress.hosts[0].paths[0].path'
           value: '/pgadmin4'
+        - name: 'ingress.hosts[0].paths[0].pathType'
+          value: 'ImplementationSpecific'
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: pgadmin4
