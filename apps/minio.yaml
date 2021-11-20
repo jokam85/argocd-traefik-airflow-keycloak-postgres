@@ -29,11 +29,11 @@ spec:
         - name: 'ingress.path'
           value: '/minio'
          
-        - name: 'ingressApi.enabled'
+        - name: 'apiIngress.enabled'
           value: 'true'
-        - name: 'ingressApi.hostname'
+        - name: 'apiIngress.hostname'
           value: 'localhost'
-        - name: 'ingressApi.path'
+        - name: 'apiIngress.path'
           value: '/minio'
 
   destination:
