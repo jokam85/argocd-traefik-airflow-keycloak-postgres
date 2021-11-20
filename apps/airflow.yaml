@@ -36,6 +36,8 @@ spec:
           value: 'airflow'
         - name: 'externalDatabase.port'
           value: '5432'
+        - name: 'externalDatabase.database'
+          value: 'airflow'
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: airflow
