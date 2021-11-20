@@ -15,7 +15,7 @@ spec:
       releaseName: 'airflow'
       parameters:
         - name: 'executor'
-          value: 'LocalExecutor'
+          value: 'CeleryExecutor'
         - name: 'redis.enabled'
           value: 'false'
         - name: 'rbac.create'
