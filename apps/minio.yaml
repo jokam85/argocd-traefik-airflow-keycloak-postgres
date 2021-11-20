@@ -14,18 +14,27 @@ spec:
     helm:
       releaseName: 'minio'
       parameters:
+        - name: 'image.debug'
+          value: 'true'
+          
         - name: 'auth.rootUser'
           value: 'admin'
         - name: 'auth.rootPassword'
           value: 'adminadmin'
+          
         - name: 'ingress.enabled'
           value: 'true'
         - name: 'ingress.hostname'
           value: 'localhost'
         - name: 'ingress.path'
           value: '/minio'
-        - name: 'image.debug'
+         
+         - name: 'ingressApi.enabled'
           value: 'true'
+        - name: 'ingressApi.hostname'
+          value: 'localhost'
+        - name: 'ingressApi.path'
+          value: '/minio'
 
   destination:
     server: 'https://kubernetes.default.svc'
