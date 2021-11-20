@@ -46,7 +46,7 @@ spec:
         - name: 'externalDatabase.port'
           value: '5432'
         - name: 'externalDatabase.database'
-          value: 'a9'
+          value: 'a10'
           
         - name: 'auth.username'
           value: 'user'
