@@ -24,10 +24,18 @@ spec:
           value: 'true'
         - name: 'web.baseUrl'
           value: '/airflow'
-        - name: ''
-          value: ''
-        - name: ''
-          value: ''
+
+
+        - name: 'postgresql.enabled'
+          value: 'false'
+        - name: 'externalDatabase.host'
+          value: 'postgres-postgresql.postgresql.svc.cluster.local'
+        - name: 'externalDatabase.user'
+          value: 'airflow'
+        - name: 'externalDatabase.password'
+          value: 'airflow'
+        - name: 'externalDatabase.port'
+          value: '5432'
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: airflow
