@@ -24,10 +24,10 @@ spec:
           value: 'localhost'
         - name: 'ingress.path'
           value: '/minio'
-        - name: ''
-          value: ''
-        - name: ''
-          value: ''
+        - name: 'extraEnv[0].name'
+          value: 'MINNIO_LOG_LEVEL'
+        - name: 'extraEnv[0].value'
+          value: 'DEBUG'
 
   destination:
     server: 'https://kubernetes.default.svc'
