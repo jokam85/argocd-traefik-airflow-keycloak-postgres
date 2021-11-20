@@ -19,7 +19,7 @@ spec:
         - name: 'auth.adminPassword'
           value: 'admin'
         - name: 'service.type'
-          value: 'clusterIP'
+          value: 'ClusterIP'
         - name: 'ingress.path'
           value: '/auth'
   destination:
