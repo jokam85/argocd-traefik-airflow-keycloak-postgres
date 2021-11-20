@@ -46,7 +46,7 @@ spec:
         - name: 'externalDatabase.port'
           value: '5432'
         - name: 'externalDatabase.database'
-          value: 'airflow3'
+          value: 'airflow4'
           
         - name: 'auth.username'
           value: 'user'
