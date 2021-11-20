@@ -15,7 +15,7 @@ spec:
       releaseName: 'pgadmin4'
       parameters:
         - name: 'ingress.enabled'
-          value: 'true'
+          value: 'false'
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: pgadmin4
