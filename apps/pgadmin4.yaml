@@ -15,7 +15,11 @@ spec:
       releaseName: 'pgadmin4'
       parameters:
         - name: 'ingress.enabled'
-          value: 'false'
+          value: 'true'
+        - name: 'ingress.hosts.host'
+          value: 'localhost'
+        - name: 'ingress.hosts.paths[0]'
+          value: 'pgadmin4'
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: pgadmin4
