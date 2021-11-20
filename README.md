@@ -1,4 +1,4 @@
-# Argocd, Keycloak, Airflow, Traefik, 
+# Argocd, Keycloak, Airflow, Traefik, Postgres
 
 ```
 kubectl -n argocd port-forward svc/argocd-server 444:443
