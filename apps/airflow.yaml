@@ -54,7 +54,7 @@ spec:
           value: 'user'
           
         - name: 'scheduler.replicaCount'
-          value: '3'
+          value: '1'
         - name: 'worker.replicaCount'
           value: '3'
   destination:
