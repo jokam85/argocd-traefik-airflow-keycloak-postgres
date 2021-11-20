@@ -46,7 +46,7 @@ spec:
         - name: 'externalDatabase.port'
           value: '5432'
         - name: 'externalDatabase.database'
-          value: 'a10'
+          value: 'a12'
           
         - name: 'auth.username'
           value: 'user'
@@ -56,10 +56,10 @@ spec:
         - name: 'scheduler.replicaCount'
           value: '1'
         - name: 'worker.replicaCount'
-          value: '5'
+          value: '3'
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: airflow2
+    namespace: airflow3
   syncPolicy:
     automated:
       prune: true
