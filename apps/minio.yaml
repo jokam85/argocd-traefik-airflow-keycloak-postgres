@@ -27,7 +27,7 @@ spec:
         - name: 'ingress.hostname'
           value: 'localhost'
         - name: 'ingress.path'
-          value: '/minio'
+          value: '/'
          
         - name: 'apiIngress.enabled'
           value: 'true'
