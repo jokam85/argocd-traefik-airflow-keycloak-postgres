@@ -31,9 +31,9 @@ spec:
         - name: 'externalDatabase.port'
           value: '5432'         
         - name: 'externalDatabase.user'
-          value: 'keycloak'         
+          value: 'postgres'         
         - name: 'externalDatabase.password'
-          value: 'keycloak'         
+          value: 'postgres'         
         - name: 'externalDatabase.database'
           value: 'postgres'
   destination:
