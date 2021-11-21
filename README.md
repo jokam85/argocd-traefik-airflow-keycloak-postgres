@@ -1,7 +1,7 @@
 # Argocd, Keycloak, Airflow, Traefik, Postgres
 
 ```
-kubectl -n argocd port-forward svc/argocd-server 444:443
+kubectl -n argocd port-forward svc/argocd-server 443:443
 ```
 
 ```
