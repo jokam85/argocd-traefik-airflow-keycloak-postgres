@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: a24
+  name: a25
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -46,7 +46,7 @@ spec:
         - name: 'externalDatabase.port'
           value: '5432'
         - name: 'externalDatabase.database'
-          value: 'a24'
+          value: 'a25'
           
         - name: 'auth.username'
           value: 'user'
@@ -59,7 +59,7 @@ spec:
 #           value: '5'
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: a24
+    namespace: a25
   syncPolicy:
     automated:
       prune: true
