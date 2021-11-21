@@ -57,6 +57,11 @@ spec:
           value: 'var_2'
         - name: 'airflow.variables[1].value'
           value: 'var_2_value'
+          
+        - name: 'web.extraPipPackages[0]'
+          value: 'Flask-AppBuilder~=3.3.0'
+        - name: 'web.extraPipPackages[1]'
+          value: 'Authlib~=0.15.3'
 
   destination:
     server: 'https://kubernetes.default.svc'
