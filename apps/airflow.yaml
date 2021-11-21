@@ -56,10 +56,10 @@ spec:
         - name: 'scheduler.replicaCount'
           value: '3'
           
-        - name: extraEnvVars[0].name
+        - name: web.extraEnvVars[0].name
         - value: AIRFLOW__WEBSERVER__EXPOSE_CONFIG
         
-        - name: extraEnvVars[0].value
+        - name: web.extraEnvVars[0].value
         - value: 'True'
 
   destination:
