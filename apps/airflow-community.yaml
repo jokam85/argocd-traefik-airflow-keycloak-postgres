@@ -10,7 +10,8 @@ spec:
   source:
     repoURL: 'https://github.com/jokam85/airflow-community-chart.git'
     path: 'charts/airflow'
-    targetRevision: 'airflow-8.5.2'
+#     targetRevision: 'airflow-8.5.2'
+    targetRevision: 'HEAD'
     helm:
       releaseName: 'airflow'
       parameters:
