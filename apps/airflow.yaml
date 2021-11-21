@@ -64,7 +64,7 @@ spec:
         - name: 'extraEnvVars[1].name'
           value: 'AIRFLOW__SCHEDULER__PARSING_PROCESSES'
         - name: 'extraEnvVars[1].value'
-          value: '1'
+          value: '"1"'
 
   destination:
     server: 'https://kubernetes.default.svc'
