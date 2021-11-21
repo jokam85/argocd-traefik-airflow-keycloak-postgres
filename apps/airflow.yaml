@@ -57,10 +57,10 @@ spec:
           value: '3'
           
         - name: 'web.extraEnvVars[0].name'
-        - value: 'AIRFLOW__WEBSERVER__EXPOSE_CONFIG'
+          value: 'AIRFLOW__WEBSERVER__EXPOSE_CONFIG'
         
         - name: 'web.extraEnvVars[0].value'
-        - value: 'True'
+          value: 'True'
 
   destination:
     server: 'https://kubernetes.default.svc'
