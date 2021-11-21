@@ -22,31 +22,26 @@ spec:
           
         - name: 'redis.enabled'
           value: 'false'
-          
         - name: 'workers.enabled'
           value: 'false'
-          
         - name: 'flower.enabled'
           value: 'false'
-          
         - name: 'rbac.create'
           value: 'true'
-          
         - name: 'serviceaccount.create'
           value: 'true'
           
         - name: airflow.config.AIRFLOW__WEBSERVER__BASE_URL
           value: '/airflowc'
-          
         - name: airflow.config.AIRFLOW__CORE__LOAD_EXAMPLES
+          value: 'True'
+        - name: airflow.config.AIRFLOW__WEBSERVER__EXPOSE_CONFIG
           value: 'True'
 
         - name: 'ingress.enabled'
           value: 'true'
-          
         - name: 'ingress.web.host'
           value: 'localhost'
-          
         - name: 'ingress.web.path'
           value: '/airflowc'
           
