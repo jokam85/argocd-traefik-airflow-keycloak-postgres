@@ -46,7 +46,7 @@ spec:
           value: '/airflowc'
           
         - name: 'postgresql.enabled'
-          value: 'true'
+          value: 'false'
           
         - name: 'airflow.variables[0].key'
           value: 'var_1'
