@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: a25
+  name: a26
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -36,17 +36,17 @@ spec:
           value: '/airflow'
           
         - name: 'postgresql.enabled'
-          value: 'false'
-        - name: 'externalDatabase.host'
-          value: 'postgres-postgresql.postgresql.svc.cluster.local'
-        - name: 'externalDatabase.user'
-          value: 'airflow'
-        - name: 'externalDatabase.password'
-          value: 'airflow'
-        - name: 'externalDatabase.port'
-          value: '5432'
-        - name: 'externalDatabase.database'
-          value: 'a25'
+          value: 'true'
+#         - name: 'externalDatabase.host'
+#           value: 'postgres-postgresql.postgresql.svc.cluster.local'
+#         - name: 'externalDatabase.user'
+#           value: 'airflow'
+#         - name: 'externalDatabase.password'
+#           value: 'airflow'
+#         - name: 'externalDatabase.port'
+#           value: '5432'
+#         - name: 'externalDatabase.database'
+#           value: 'a25'
           
         - name: 'auth.username'
           value: 'user'
@@ -55,11 +55,10 @@ spec:
           
         - name: 'scheduler.replicaCount'
           value: '2'
-#         - name: 'worker.replicaCount'
-#           value: '5'
+
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: a25
+    namespace: a26
   syncPolicy:
     automated:
       prune: true
