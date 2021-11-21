@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: a32
+  name: a33
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/bitnami/charts.git'
+    repoURL: 'https://github.com/jokam85/charts.git'
     path: 'bitnami/airflow'
     targetRevision: HEAD
     helm:
@@ -46,7 +46,7 @@ spec:
         - name: 'externalDatabase.port'
           value: '5432'
         - name: 'externalDatabase.database'
-          value: 'a32'
+          value: 'a33'
           
         - name: 'auth.username'
           value: 'user'
@@ -55,20 +55,10 @@ spec:
           
         - name: 'scheduler.replicaCount'
           value: '1'
-          
-        - name: 'extraEnvVars[0].name'
-          value: 'AIRFLOW__WEBSERVER__EXPOSE_CONFIG'
-        - name: 'extraEnvVars[0].value'
-          value: '"true"'
-          
-        - name: 'extraEnvVars[1].name'
-          value: 'AIRFLOW__SCHEDULER__PARSING_PROCESSES'
-        - name: 'extraEnvVars[1].value'
-          value: '1'
 
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: a32
+    namespace: a33
   syncPolicy:
     automated:
       prune: true
