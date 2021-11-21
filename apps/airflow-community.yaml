@@ -16,6 +16,7 @@ spec:
       parameters:
         - name: 'airflow.executor'
           value: 'KubernetesExecutor'
+          
         - name: airflow.fernetKey
           value: ''
           
@@ -42,23 +43,16 @@ spec:
 
         - name: 'ingress.enabled'
           value: 'true'
+          
         - name: 'ingress.web.host'
           value: 'localhost'
+          
         - name: 'ingress.web.path'
           value: '/airflowc'
           
-#         - name: 'postgresql.enabled'
-#           value: 'false'
-#         - name: 'externalDatabase.host'
-#           value: 'postgres-postgresql.postgresql.svc.cluster.local'
-#         - name: 'externalDatabase.user'
-#           value: 'airflow'
-#         - name: 'externalDatabase.password'
-#           value: 'airflow'
-#         - name: 'externalDatabase.port'
-#           value: '5432'
-#         - name: 'externalDatabase.database'
-#           value: 'ac1'
+        - name: 'postgresql.enabled'
+          value: 'true'
+
 
   destination:
     server: 'https://kubernetes.default.svc'
