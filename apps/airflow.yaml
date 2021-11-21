@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: a29
+  name: a30
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -46,7 +46,7 @@ spec:
         - name: 'externalDatabase.port'
           value: '5432'
         - name: 'externalDatabase.database'
-          value: 'a29'
+          value: 'a30'
           
         - name: 'auth.username'
           value: 'user'
@@ -54,17 +54,21 @@ spec:
           value: 'user'
           
         - name: 'scheduler.replicaCount'
-          value: '3'
+          value: '1'
           
         - name: 'web.extraEnvVars[0].name'
           value: 'AIRFLOW__WEBSERVER__EXPOSE_CONFIG'
-        
         - name: 'web.extraEnvVars[0].value'
           value: '"true"'
+          
+        - name: 'web.extraEnvVars[1].name'
+          value: 'AIRFLOW__SCHEDULER__PARSING_PROCESSES'
+        - name: 'web.extraEnvVars[1].value'
+          value: '"1"'
 
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: a29
+    namespace: a30
   syncPolicy:
     automated:
       prune: true
