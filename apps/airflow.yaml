@@ -54,7 +54,7 @@ spec:
           value: 'user'
           
         - name: 'scheduler.replicaCount'
-          value: '2'
+          value: '3'
 
   destination:
     server: 'https://kubernetes.default.svc'
