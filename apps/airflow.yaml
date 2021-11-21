@@ -60,7 +60,7 @@ spec:
           value: 'AIRFLOW__WEBSERVER__EXPOSE_CONFIG'
         
         - name: 'web.extraEnvVars[0].value'
-          value: 'True'
+          value: true
 
   destination:
     server: 'https://kubernetes.default.svc'
