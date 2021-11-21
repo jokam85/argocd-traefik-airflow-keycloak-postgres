@@ -56,7 +56,7 @@ spec:
         - name: 'airflow.variables[0].key'
           value: 'var_1'
         - name: 'airflow.variables[0].value'
-          value: 'var_1_value'
+          value: 'var_1_value_new'
 
   destination:
     server: 'https://kubernetes.default.svc'
