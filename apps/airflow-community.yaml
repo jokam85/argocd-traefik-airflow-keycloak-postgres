@@ -52,7 +52,11 @@ spec:
           
         - name: 'postgresql.enabled'
           value: 'true'
-
+          
+        - name: 'airflow.variables[0].key'
+          value: 'var_1'
+        - name: 'airflow.variables[0].value'
+          value: 'var_1_value'
 
   destination:
     server: 'https://kubernetes.default.svc'
