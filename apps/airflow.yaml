@@ -56,11 +56,11 @@ spec:
         - name: 'scheduler.replicaCount'
           value: '3'
           
-#         - name: web.extraEnvVars[0].name
-#         - value: AIRFLOW__WEBSERVER__EXPOSE_CONFIG
+        - name: 'web.extraEnvVars[0].name'
+        - value: 'AIRFLOW__WEBSERVER__EXPOSE_CONFIG'
         
-#         - name: web.extraEnvVars[0].value
-#         - value: 'True'
+        - name: 'web.extraEnvVars[0].value'
+        - value: 'True'
 
   destination:
     server: 'https://kubernetes.default.svc'
