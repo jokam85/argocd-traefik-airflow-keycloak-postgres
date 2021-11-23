@@ -4,6 +4,8 @@ metadata:
   name: argocd-server
   namespace: argocd
 spec:
+  middlewares:
+    - stripprefix
   entryPoints:
     - web
     - websecure
@@ -21,3 +23,12 @@ spec:
         - name: argocd-server
           port: 80
           scheme: h2c
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: stripprefix
+spec:
+  stripPrefix:
+    prefixes:
+      - /argo-cd
