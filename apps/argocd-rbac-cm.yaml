@@ -9,3 +9,4 @@ metadata:
 data:
   policy.csv: |
     g, ArgoCDAdmins, role:admin
+    g, /ArgoCDAdmins, role:admin
