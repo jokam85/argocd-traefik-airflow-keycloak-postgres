@@ -12,3 +12,8 @@ spec:
       services:
         - name: argocd-server
           port: 80
+    - kind: Rule
+      match: Host(`keycloak.keycloak.svc`) && PathPrefix(`/argo-cd`)
+      services:
+        - name: argocd-server
+          port: 80
