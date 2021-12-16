@@ -14,3 +14,4 @@ data:
     clientID: argocd
     clientSecret: $oidc.keycloak.clientSecret
     requestedScopes: ["openid", "profile", "email", "groups"]
+    logoutURL: http://keycloak.keycloak.svc/auth/realms/argocd/protocol/openid-connect/logout
