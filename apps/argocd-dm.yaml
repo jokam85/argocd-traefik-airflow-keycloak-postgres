@@ -14,4 +14,4 @@ data:
     clientID: argocd
     clientSecret: $oidc.keycloak.clientSecret
     requestedScopes: ["openid", "profile", "email", "groups"]
-    logoutURL: http://keycloak.keycloak.svc/auth/realms/argocd/protocol/openid-connect/logout
+    logoutURL: http://keycloak.keycloak.svc/auth/realms/argocd/protocol/openid-connect/logout?redirect_uri=http%3A%2F%2Flocalhost%2Fargo-cd
