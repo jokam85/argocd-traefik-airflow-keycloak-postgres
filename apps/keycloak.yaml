@@ -29,7 +29,7 @@ spec:
         - name: 'ingress.path'
           value: '/auth'
         - name: 'ingress.hostname'
-          value: 'localhost'
+          value: 'keycloak.keycloak.svc'
           
         - name: 'postgresql.enabled'
           value: 'false'
