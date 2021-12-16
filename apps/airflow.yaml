@@ -1,67 +1,67 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: a34
-  namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
-spec:
-  project: default
-  source:
-    repoURL: 'https://github.com/jokam85/charts.git'
-    path: 'bitnami/airflow'
-    targetRevision: HEAD
-    helm:
-      releaseName: 'airflow'
-      parameters:
-        - name: 'executor'
-          value: 'KubernetesExecutor'
-        - name: 'redis.enabled'
-          value: 'false'
-        - name: 'rbac.create'
-          value: 'true'
-        - name: 'serviceaccount.create'
-          value: 'true'
-        - name: 'web.baseUrl'
-          value: '/airflow'
-          
-        - name: 'loadExamples'
-          value: 'true'
-          
-        - name: 'ingress.enabled'
-          value: 'true'
-        - name: 'ingress.hosts[0].name'
-          value: 'localhost'
-        - name: 'ingress.hosts[0].path'
-          value: '/airflow'
-          
-        - name: 'postgresql.enabled'
-          value: 'false'
-        - name: 'externalDatabase.host'
-          value: 'postgres-postgresql.postgresql.svc.cluster.local'
-        - name: 'externalDatabase.user'
-          value: 'airflow'
-        - name: 'externalDatabase.password'
-          value: 'airflow'
-        - name: 'externalDatabase.port'
-          value: '5432'
-        - name: 'externalDatabase.database'
-          value: 'a34'
-          
-        - name: 'auth.username'
-          value: 'user'
-        - name: 'auth.password'
-          value: 'user'
-          
-        - name: 'scheduler.replicaCount'
-          value: '1'
-
-  destination:
-    server: 'https://kubernetes.default.svc'
-    namespace: a34
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
+#apiVersion: argoproj.io/v1alpha1
+#kind: Application
+#metadata:
+#  name: a34
+#  namespace: argocd
+#  finalizers:
+#    - resources-finalizer.argocd.argoproj.io
+#spec:
+#  project: default
+#  source:
+#    repoURL: 'https://github.com/jokam85/charts.git'
+#    path: 'bitnami/airflow'
+#    targetRevision: HEAD
+#    helm:
+#      releaseName: 'airflow'
+#      parameters:
+#        - name: 'executor'
+#          value: 'KubernetesExecutor'
+#        - name: 'redis.enabled'
+#          value: 'false'
+#        - name: 'rbac.create'
+#          value: 'true'
+#        - name: 'serviceaccount.create'
+#          value: 'true'
+#        - name: 'web.baseUrl'
+#          value: '/airflow'
+#
+#        - name: 'loadExamples'
+#          value: 'true'
+#
+#        - name: 'ingress.enabled'
+#          value: 'true'
+#        - name: 'ingress.hosts[0].name'
+#          value: 'localhost'
+#        - name: 'ingress.hosts[0].path'
+#          value: '/airflow'
+#
+#        - name: 'postgresql.enabled'
+#          value: 'false'
+#        - name: 'externalDatabase.host'
+#          value: 'postgres-postgresql.postgresql.svc.cluster.local'
+#        - name: 'externalDatabase.user'
+#          value: 'airflow'
+#        - name: 'externalDatabase.password'
+#          value: 'airflow'
+#        - name: 'externalDatabase.port'
+#          value: '5432'
+#        - name: 'externalDatabase.database'
+#          value: 'a34'
+#
+#        - name: 'auth.username'
+#          value: 'user'
+#        - name: 'auth.password'
+#          value: 'user'
+#
+#        - name: 'scheduler.replicaCount'
+#          value: '1'
+#
+#  destination:
+#    server: 'https://kubernetes.default.svc'
+#    namespace: a34
+#  syncPolicy:
+#    automated:
+#      prune: true
+#      selfHeal: true
+#    syncOptions:
+#      - CreateNamespace=true
