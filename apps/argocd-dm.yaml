@@ -7,10 +7,10 @@ metadata:
     app.kubernetes.io/name: argocd-cm
     app.kubernetes.io/part-of: argocd
 data:
-  url: http://keycloak.keycloak.svc/argo-cd
+  url: http://localhost/argo-cd
   oidc.config: |
     name: Keycloak
-    issuer: http://localhost/auth/realms/argocd
+    issuer: http://keycloak.keycloak.svc/auth/realms/argocd
     clientID: argocd
     clientSecret: $oidc.keycloak.clientSecret
     requestedScopes: ["openid", "profile", "email", "groups"]
